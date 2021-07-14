@@ -1,0 +1,498 @@
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    li {
+        list-style: none;
+    }
+    
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    /* All button style  */
+    
+    .btn {
+        background-color: #E02C6D;
+        color: white;
+        padding: 6px 19px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 5px;
+    }
+    
+    .btn:hover {
+        background-color: #ffffff;
+        border: 2px solid #E02C6D;
+        color: black;
+    }
+    
+    .cart-btn {
+        background-color: #daa700;
+        border-radius: 5px;
+        margin: 4px;
+        border: 2px solid #dfdfdf;
+    }
+    
+    .shop .btn:hover {
+        border: 2px solid #daa700;
+        background-color: white;
+        color: black;
+    }
+    
+    .btn:active {
+        background-color: #ee6e06!important;
+        box-shadow: 5px 5px #161616;
+        transform: translateY(4px);
+    }
+    /* Al button style end */
+    
+    .header {
+        background-color: #2d25a0;
+        color: white;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .header img {
+        width: 100%;
+    }
+    
+    .header-container {
+        width: 1200px;
+        max-width: 90%;
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+    }
+    
+    .nav-items {
+        display: flex;
+    }
+    
+    .nav-items li a {
+        padding-right: 30px;
+    }
+    
+    .nav-items li a:hover {
+        color: black;
+    }
+    /* responsive nav menu */
+    
+    .checkbtn {
+        font-size: 30px;
+        color: white;
+        float: left;
+        line-height: 80px;
+        margin-right: 40px;
+        cursor: pointer;
+        display: none;
+    }
+    
+    #check {
+        display: none;
+    }
+    
+    @media screen and (max-width:850px) {
+        ul li a {
+            font-size: 16px;
+        }
+        .checkbtn {
+            display: block;
+        }
+        ul {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: #2d25a0;
+            top: 80px;
+            left: -100%;
+            text-align: center;
+            flex-direction: column;
+            transition: all 0.5s;
+            z-index: 999;
+        }
+        ul li {
+            display: block;
+            border-bottom: 1px solid white;
+            padding: 10px;
+        }
+        nav ul li a {
+            font-size: 20px;
+        }
+        nav ul li a:hover {
+            color: black;
+        }
+        #check:checked~ul {
+            left: 0;
+        }
+    }
+    /* reponsive menu end */
+    
+    .banner,
+    .highlight-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+    }
+    
+    .banner h1 {
+        position: relative;
+        color: #252839;
+        font-size: 50px;
+        text-align: left;
+    }
+    
+    .banner .left-col {
+        align-items: flex-start;
+        text-align: left;
+        padding-bottom: 30px;
+    }
+    
+    .banner h1::before {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        color: white;
+        border-right: 2px solid white;
+        overflow: hidden;
+        animation: animateText 6s linear infinite;
+    }
+    
+    @keyframes animateText {
+        0%,
+        10%,
+        100% {
+            width: 0;
+        }
+        70%,
+        90% {
+            width: 100%;
+        }
+    }
+    
+    .banner-img {
+        animation: imageanimation 2s 0.5s linear;
+    }
+    
+    @keyframes imageanimation {
+        0% {
+            transform: rotate(360deg);
+        }
+        50% {
+            transform: rotate(180deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+    
+    .banner-img:hover {
+        animation: imageanimationhover 2s 0.1s linear;
+    }
+    
+    @keyframes imageanimationhover {
+        0% {
+            transform: rotate(0);
+        }
+        50% {
+            transform: rotate(180deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+    .left-col,
+    .right-col {
+        width: 50%;
+    }
+    
+    .left-col {
+        line-height: 1.5;
+    }
+    
+    .right-col img {
+        width: 100%;
+    }
+    
+    .left-col p {
+        line-height: 1.9;
+        margin-bottom: 20px;
+    }
+    /* player card styles start */
+    
+    .player,
+    .shop {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        padding-top: 60px;
+    }
+    
+    .player-container {
+        /* background-color: #d3d3d3; */
+        width: 1050px;
+        max-width: 85%;
+    }
+    
+    .player-content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .card {
+        /* width: 300px;
+    max-width: 97%; */
+        /* height: 474px; */
+        box-shadow: 0 14px 18px 0 rgba(88, 88, 88, 0.2), 0 16px 30px 0 rgba(107, 107, 107, 0.19);
+        margin: 10px 10px;
+    }
+    
+    .card:hover {
+        opacity: 0.6;
+    }
+    
+    .card p {
+        color: grey;
+    }
+    
+    .card img {
+        width: 100%;
+    }
+    
+    .card-content {
+        padding: 14px;
+    }
+    
+    .card-content p {
+        padding-bottom: 30px;
+    }
+    /* player card styles end */
+    /* highlight section style start*/
+    
+    .highlight {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .highlight-container {
+        width: 1100px;
+        max-width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .highlight-container h1 {
+        font-size: 46px;
+        font-weight: bolder;
+    }
+    /* highlight section style end*/
+    /* achievements style start*/
+    
+    .achievements {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .achievements-container {
+        width: 1100px;
+        max-width: 90%;
+    }
+    
+    .achievements-container h2 {
+        font-size: 40px;
+        text-align: center;
+    }
+    
+    .achievements-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .achieve-card {
+        /* width: 200px; */
+        border: 1px solid rgb(199, 199, 199);
+        padding: 0px 3px;
+        text-align: center;
+        margin: 20px;
+    }
+    
+    .achieve-card :nth-child(3) {
+        font-size: 30px;
+    }
+    
+    .achieve-card img {
+        width: 100%;
+        height: 180px;
+    }
+    /* achievements style end*/
+    /* shop style start*/
+    
+    .shop-container {
+        width: 1050px;
+        max-width: 85%;
+    }
+    
+    .shop-container h2 {
+        text-align: center;
+        font-size: 50px;
+    }
+    
+    .shop-content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .shop-card {
+        /* width: 220px; */
+        text-align: center;
+        background-color: #dfdfdf;
+        padding: 10px;
+        margin: 20px;
+        border-radius: 10px;
+    }
+    
+    .shop-card img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    /* shop style end*/
+    /* footer style */
+    
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 90px;
+    }
+    
+    .footer-container {
+        width: 483px;
+        max-width: 90%;
+        height: 213px;
+        text-align: center;
+        line-height: 1.9;
+    }
+    
+    .footer-container img {
+        width: 90%;
+    }
+    
+    .footer-container i {
+        background-color: rgb(194, 194, 194);
+        width: 41px;
+        height: 41px;
+        font-size: 22px!important;
+        border-radius: 50%;
+        align-items: center;
+        text-align: center;
+        padding-top: 10px;
+        justify-content: space-between;
+        color: gray;
+        margin: 10px;
+        cursor: pointer;
+    }
+    
+    .footer-container p {
+        padding-top: 10px;
+    }
+    /* media query for tablet and mobile */
+    
+    @media only screen and (max-width:1054px) {
+        .banner .left-col h1,
+        .highlight .left-col h1 {
+            font-size: 39px;
+        }
+        .banner .left-col,
+        .highlight .left-col {
+            list-style: 1.4;
+        }
+    }
+    
+    @media screen and (max-width:954px) {
+        .player-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .highlight-container {
+            flex-direction: column;
+        }
+        .highlight-container .left-col,
+        .highlight-container .right-col {
+            width: 100%;
+            padding-bottom: 20px;
+            align-items: center;
+            text-align: center;
+        }
+        .achievements-content {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+    
+    @media screen and (max-width:738px) {
+        .shop-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media screen and (max-width:718px) {
+        .banner .left-col h1 {
+            font-size: 30px;
+        }
+    }
+    
+    @media screen and (max-width:638px) {
+        .achievements-content {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    
+    @media screen and (max-width:530px) {
+        .banner {
+            flex-direction: column;
+        }
+        .banner.left-col,
+        .banner .right-col {
+            width: 100%;
+            padding-bottom: 20px;
+            font-size: 40px;
+        }
+        .player-content {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    
+    @media screen and (max-width:450px) {
+        .achievements-content {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    
+    @media screen and (max-width:469px) {
+        .shop-content {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .highlight-container h1 {
+            font-size: 25px!important;
+            /* color: red; */
+        }
+        .achievements-container h2 {
+            font-size: 28px!important;
+        }
+    }
